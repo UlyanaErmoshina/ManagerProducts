@@ -1,12 +1,18 @@
-package ru.netology.domain.manager;
+package ru.netology.manager;
 
-import ru.netology.domain.Book;
 import ru.netology.domain.Product;
-import ru.netology.domain.Smartphone;
-import ru.netology.domain.repository.ProductRepository;
+import ru.netology.repository.ProductRepository;
 
 public class ProductManager {
-    private ProductRepository repository = new ProductRepository();
+    private ProductRepository repository;
+
+    public ProductManager(ProductRepository repository) {
+        this.repository = repository;
+    }
+
+    public ProductManager() {
+
+    }
 
     public void add(Product item) {
         repository.save(item);
@@ -18,7 +24,6 @@ public class ProductManager {
         for (Product product : repository.findAll()) {
             if (product.matches(text)) {
                 Product[] tmp = new Product[result.length + 1];
-                // используйте System.arraycopy, чтобы скопировать всё из result в tmp
                 tmp[tmp.length - 1] = product;
                 result = tmp;
             }
