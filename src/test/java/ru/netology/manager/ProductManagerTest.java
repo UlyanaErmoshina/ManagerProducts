@@ -19,6 +19,7 @@ class ProductManagerTest {
 
     private Book first = new Book(1, "morning", 100, "Elrod");
     private Book third = new Book(3, "morning", 100, "Lev");
+    private Book fourth = new Book(4, "day", 100, "Leo");
     private Smartphone iPhone = new Smartphone(1, "IphoneXR", 200, "China");
     private Product second = new Product(2, "Apple", 50);
 
@@ -28,6 +29,7 @@ class ProductManagerTest {
         manager.add(iPhone);
         manager.add(second);
         manager.add(third);
+        manager.add(fourth);
     }
 
     @Test
@@ -36,6 +38,14 @@ class ProductManagerTest {
         manager.searchBy(book);
         Product[] actual = manager.searchBy(book);
         Product[] expected = new Product[]{first,third};
+        assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void ShouldSearchByBookName() {
+        String book = "day";
+        manager.searchBy(book);
+        Product[] actual = manager.searchBy(book);
+        Product[] expected = new Product[]{fourth};
         assertArrayEquals(expected, actual);
     }
 
