@@ -12,31 +12,31 @@ class BookTest {
 
     @Test
     public void shouldGetTrueSearchByName() {
-        String Book = "morning";
-        boolean actual = first.matches(Book);
+        String book = "morning";
+        boolean actual = first.matches(book);
         boolean expected = true;
         assertEquals(expected, actual);
     }
 
     @Test
     public void shouldGetFalseSearchByName() {
-        String Book = null;
-        boolean actual = first.matches(Book);
+        String book = null;
+        boolean actual = first.matches(book);
         boolean expected = false;
         assertEquals(expected, actual);
     }
 
     @Test
     public void shouldGetTrueSearchByAuthor() {
-        String Book = "Elrod";
-        boolean actual = first.matches(Book);
+        String book = "Elrod";
+        boolean actual = first.matches(book);
         boolean expected = true;
         assertEquals(expected, actual);
     }
     @Test
     public void shouldGetFalseSearchByAuthor() {
-        String Book = null;
-        boolean actual = first.matches(Book);
+        String book = null;
+        boolean actual = first.matches(book);
         boolean expected = false;
         assertEquals(expected, actual);
     }
