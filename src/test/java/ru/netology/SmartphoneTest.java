@@ -13,28 +13,27 @@ class SmartphoneTest {
     public void shouldGetTrueSearchByName() {
         String smartphone = "IphoneXR";
         boolean actual = iPhone.matches(smartphone);
-        boolean expected = true;
-        assertEquals(expected, actual);
+        assertTrue(actual);
     }
+
     @Test
     public void shouldGetFalseSearchByName() {
         String smartphone = null;
         boolean actual = iPhone.matches(smartphone);
-        boolean expected = false;
-        assertEquals(expected, actual);
+        assertFalse(actual);
     }
+
     @Test
     public void shouldGetTrueSearchByManufacturer() {
         String smartphone = "China";
         boolean actual = iPhone.matches(smartphone);
-        boolean expected = true;
-        assertEquals(expected, actual);
+        assertTrue(actual);
     }
+
     @Test
     public void shouldGetFalseSearchByManufacturer() {
         String smartphone = null;
         boolean actual = iPhone.matches(smartphone);
-        boolean expected = false;
-        assertEquals(expected, actual);
+        assertFalse(actual);
     }
 }

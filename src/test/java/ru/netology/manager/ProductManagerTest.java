@@ -22,7 +22,7 @@ class ProductManagerTest {
     private Product Second = new Product(2, "Apple", 50);
 
     @BeforeEach
-    public void SetUp() {
+    public void setUp() {
         manager.add(First);
         manager.add(IPhone);
         manager.add(Second);
@@ -31,15 +31,16 @@ class ProductManagerTest {
     }
 
     @Test
-    public void ShouldSearchTwoBooksByName() {
+    public void shouldSearchTwoBooksByName() {
         String book = "morning";
         manager.searchBy(book);
         Product[] actual = manager.searchBy(book);
         Product[] expected = new Product[]{First,Third};
         assertArrayEquals(expected, actual);
     }
+
     @Test
-    public void ShouldSearchByBookName() {
+    public void shouldSearchByBookName() {
         String book = "day";
         manager.searchBy(book);
         Product[] actual = manager.searchBy(book);
@@ -48,55 +49,61 @@ class ProductManagerTest {
     }
 
     @Test
-    public void ShouldSearchByBookAuthor() {
+    public void shouldSearchByBookAuthor() {
         String book = "Elrod";
         manager.searchBy(book);
         Product[] actual = manager.searchBy(book);
         Product[] expected = new Product[]{First};
         assertArrayEquals(expected, actual);
     }
+
     @Test
-    public void ShouldSearchByBookNoName() {
+    public void shouldSearchByBookNoName() {
         String book = null;
         manager.searchBy(book);
         Product[] actual = manager.searchBy(book);
         Product[] expected = new Product[0];
         assertArrayEquals(expected, actual);
     }
+
     @Test
-    public void ShouldSearchByBookNoAuthor() {
+    public void shouldSearchByBookNoAuthor() {
         String book = "Tolstoi";
         manager.searchBy(book);
         Product[] actual = manager.searchBy(book);
         Product[] expected = new Product[0];
         assertArrayEquals(expected, actual);
     }
+
     @Test
-    public void ShouldSearchBySmartphoneName() {
+    public void shouldSearchBySmartphoneName() {
         String smartphone = "IPhoneXR";
         manager.searchBy(smartphone);
         Product[] actual = manager.searchBy(smartphone);
         Product[] expected = new Product[]{IPhone};
         assertArrayEquals(expected, actual);
     }
+
     @Test
-    public void ShouldSearchBySmartphoneManufacturer() {
+    public void shouldSearchBySmartphoneManufacturer() {
         String smartphone = "China";
         manager.searchBy(smartphone);
         Product[] actual = manager.searchBy(smartphone);
         Product[] expected = new Product[]{IPhone};
         assertArrayEquals(expected, actual);
     }
+
     @Test
-    public void ShouldSearchBySmartphoneNoName() {
+    public void shouldSearchBySmartphoneNoName() {
         String smartphone = null;
         manager.searchBy(smartphone);
         Product[] actual = manager.searchBy(smartphone);
         Product[] expected = new Product[0];
         assertArrayEquals(expected, actual);
     }
+
     @Test
-    public void ShouldSearchBySmartphoneNoManucturer() {
+    public void shouldSearchBySmartphoneNoManucturer() {
         String smartphone = "England";
         manager.searchBy(smartphone);
         Product[] actual = manager.searchBy(smartphone);

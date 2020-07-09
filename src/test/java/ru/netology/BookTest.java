@@ -14,31 +14,28 @@ class BookTest {
     public void shouldGetTrueSearchByName() {
         String book = "morning";
         boolean actual = first.matches(book);
-        boolean expected = true;
-        assertEquals(expected, actual);
+        assertTrue(actual);
     }
 
     @Test
     public void shouldGetFalseSearchByName() {
         String book = null;
         boolean actual = first.matches(book);
-        boolean expected = false;
-        assertEquals(expected, actual);
+        assertFalse(actual);
     }
 
     @Test
     public void shouldGetTrueSearchByAuthor() {
         String book = "Elrod";
         boolean actual = first.matches(book);
-        boolean expected = true;
-        assertEquals(expected, actual);
+        assertTrue(actual);
     }
+
     @Test
     public void shouldGetFalseSearchByAuthor() {
         String book = null;
         boolean actual = first.matches(book);
-        boolean expected = false;
-        assertEquals(expected, actual);
+        assertFalse(actual);
     }
 }
 
