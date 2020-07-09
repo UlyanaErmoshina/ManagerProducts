@@ -40,6 +40,7 @@ class ProductManagerTest {
         Product[] expected = new Product[]{first,third};
         assertArrayEquals(expected, actual);
     }
+
     @Test
     public void ShouldSearchByBookName() {
         String book = "day";
@@ -57,6 +58,7 @@ class ProductManagerTest {
         Product[] expected = new Product[]{first};
         assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldSearchByBookNoName() {
         String book = null;
@@ -65,6 +67,7 @@ class ProductManagerTest {
         Product[] expected = new Product[0];
         assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldSearchByBookNoAuthor() {
         String book = "Tolstoi";
@@ -73,6 +76,7 @@ class ProductManagerTest {
         Product[] expected = new Product[0];
         assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldSearchBySmartphoneName() {
         String smartphone = "IPhoneXR";
@@ -81,6 +85,7 @@ class ProductManagerTest {
         Product[] expected = new Product[]{iPhone};
         assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldSearchBySmartphoneManufacturer() {
         String smartphone = "China";
@@ -89,6 +94,7 @@ class ProductManagerTest {
         Product[] expected = new Product[]{iPhone};
         assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldSearchBySmartphoneNoName() {
         String smartphone = null;
@@ -97,6 +103,7 @@ class ProductManagerTest {
         Product[] expected = new Product[0];
         assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldSearchBySmartphoneNoManucturer() {
         String smartphone = "England";
