@@ -3,6 +3,7 @@ package ru.netology.domain;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import ru.netology.domain.Product;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
